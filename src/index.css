@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AA-MEA Conference 2026 Design System */
+/* Palette: Or (excellence) + Noir (élégance) + Blanc + Accents Vert/Rouge */
+/* Typographie: Playfair Display (titres) + Lato (corps) */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* AA-MEA Conference 2026 Color Palette */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5%;
+
+    /* Or (Gold) - Couleur principale d'excellence */
+    --primary: 45 100% 50%;
+    --primary-foreground: 0 0% 5%;
+    --primary-glow: 45 100% 65%;
+    
+    /* Noir profond - Élégance */
+    --secondary: 0 0% 5%;
+    --secondary-foreground: 0 0% 98%;
+    
+    /* Blanc */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+    
+    /* Accents */
+    --accent-green: 120 60% 45%; /* Vert durabilité */
+    --accent-red: 0 85% 55%; /* Rouge énergie */
+    
+    /* Système de couleurs */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+    
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 5%;
+    
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 45 100% 50%;
+    
+    --radius: 0.5rem;
+    
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(45 100% 50%), hsl(45 100% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 5% / 0.8), hsl(0 0% 5% / 0.6));
+    --gradient-elegant: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 98%));
+    
+    /* Shadows */
+    --shadow-gold: 0 10px 30px -10px hsl(45 100% 50% / 0.3);
+    --shadow-elegant: 0 4px 20px -4px hsl(0 0% 5% / 0.1);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 20%;
+    --sidebar-primary: 0 0% 5%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 0 0% 5%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 45 100% 50%;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+    
+    --primary: 45 100% 55%;
+    --primary-foreground: 0 0% 5%;
+    --primary-glow: 45 100% 70%;
+    
+    --secondary: 0 0% 98%;
+    --secondary-foreground: 0 0% 5%;
+    
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+    
+    --accent-green: 120 60% 50%;
+    --accent-red: 0 85% 60%;
+    
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+    
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 45 100% 55%;
+    
+    --gradient-gold: linear-gradient(135deg, hsl(45 100% 55%), hsl(45 100% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 5% / 0.9), hsl(0 0% 5% / 0.7));
+    --gradient-elegant: linear-gradient(180deg, hsl(0 0% 8%), hsl(0 0% 5%));
+    
+    --shadow-gold: 0 10px 30px -10px hsl(45 100% 55% / 0.4);
+    --shadow-elegant: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 45 100% 55%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 45 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Lato', sans-serif;
+  }
+  
+  /* Typographie AA-MEA */
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-body {
+    font-family: 'Lato', sans-serif;
+  }
+  
+  /* Utilitaires personnalisés */
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-elegant {
+    background: var(--gradient-elegant);
+  }
+  
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  @keyframes pulse-gold {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(45 100% 50% / 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px hsl(45 100% 50% / 0);
+    }
+  }
+  
+  .animate-pulse-gold {
+    animation: pulse-gold 2s infinite;
+  }
+  
+  /* Responsive typography */
+  .text-hero {
+    @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold;
+  }
+  
+  .text-section-title {
+    @apply text-2xl md:text-3xl lg:text-4xl font-display font-semibold;
+  }
+  
+  .text-card-title {
+    @apply text-xl md:text-2xl font-display font-medium;
+  }
+}
